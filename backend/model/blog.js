@@ -12,5 +12,15 @@ const blogSchema = new Schema({
     Description: {
         type: String,
         required: true,
-    
-})
+    },
+    image: {
+        type: String,
+        required: true,
+    },
+    user: {
+        type: String,
+        required: true,
+    },
+});
+
+export default mongoose.model("Blog", blogSchema);
