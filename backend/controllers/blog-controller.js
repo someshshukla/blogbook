@@ -85,7 +85,7 @@ export const deleteBlog = async (req, res, next) => {
     try {
         blog = await Blog.findByIdAndRemove(id).populate('user');
         await blog.user.blogs.pull(blog);
-        await blog.user.save();
+        await blog.user.save();  
     }catch(err){
         console.log(err);
     }
@@ -94,3 +94,19 @@ export const deleteBlog = async (req, res, next) => {
     }
     return res.status(200).json({message: "Successfully deleted the blog"})
 };
+
+
+export const getByUserId = async (req, res, next) => {
+    const userId = req,params.id;
+    let userBlogs;
+    try {
+        userBlogs = await User.findById(userId).populate("blogs");
+    } catch (err) {
+        return console.log(err);
+
+    }
+    if(!userBlogs) {
+        return res.status(404).json({message: "No blogs found"})
+    }
+    return res.status(200).json({blog: userBlogs})
+}
