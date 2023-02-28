@@ -4,5 +4,5 @@ const router = express.Router();
 
 blogRouter.get("/", getAllBlogs);
 blogRouter.post("/add", addBlog);
-
+blogRouter.put("/update/:id", updateBlog);
 export default blogRouter;
