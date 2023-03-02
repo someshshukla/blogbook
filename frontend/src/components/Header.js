@@ -1,8 +1,12 @@
 import React from 'react'
-
+import { AppBar, Toolbar, Typography } from '@mui/material';
 const Header = () => {
   return (
-    <div>Header</div>
+    <AppBar>
+      <Toolbar>
+        <Typography>blogbook</Typography>
+      </Toolbar>
+    </AppBar>
   )
 }
 
