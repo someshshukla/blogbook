@@ -1,7 +1,8 @@
 import { TextField, Box, Button, Typography } from '@mui/material';
-import React from 'react'
+import React, { useState } from 'react'
 
 const Auth = () => {
+  const [isSignup, setIsSignUp] = useState(false);
   return (
     <div>
       <form>
@@ -16,12 +17,12 @@ const Auth = () => {
          marginTop={5}
          borderRadius={5}
         >
-          <Typography padding={3} textAlign='center'>Login</Typography>
-          <TextField margin='normal'/>
-          <TextField margin='normal'/>
-          <TextField margin='normal'/>
-          <Button>Submit</Button>
-          <Button>Signup</Button>
+ <Typography variant='h4' padding={3} textAlign='center'>Login</Typography>
+{ isSignup &&<TextField placeholder='Name' margin='normal'/>
+}          <TextField type={"email"} placeholder='Email' margin='normal'/>
+          <TextField type={"password"} placeholder='password' margin='normal'/>
+          <Button variant='contained' sx={{marginTop: 3}}>Submit</Button>
+          <Button sx={{marginTop: 3}} onClick={()=>setIsSignUp(!isSignup)}>{isSignup ? "Login" : "Signup"}</Button>
         </Box>
       </form>
     </div>
