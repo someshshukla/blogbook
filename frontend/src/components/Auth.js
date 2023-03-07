@@ -2,6 +2,9 @@ import { TextField, Box, Button, Typography } from '@mui/material';
 import React, { useState } from 'react'
 
 const Auth = () => {
+  const [state, setstate] = useState({
+    name:"",email:"",password:""
+  });
   const [isSignup, setIsSignUp] = useState(false);
   return (
     <div>
