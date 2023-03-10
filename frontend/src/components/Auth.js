@@ -1,7 +1,11 @@
 import { TextField, Box, Button, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useState, useDispatch } from 'react';
 import axios from "axios";
+
+
+
 const Auth = () => {
+  const dispatch = useDispatch();
   const [inputs, setInputs] = useState({
     name:"",
     email:"",
@@ -35,9 +39,9 @@ const Auth = () => {
     console.log(inputs);
 
     if(isSignup){
-      sendRequest("signup").then(data=>console.log(data))
+      sendRequest("signup").then(()=>dispatch(authActions.login())).then(data=>console.log(data))
     } else {
-      sendRequest().then(data=>console.log(data))
+      sendRequest().then(()=>dispatch(authActions.login())).then(data=>console.log(data))
     }
   }
   return (
