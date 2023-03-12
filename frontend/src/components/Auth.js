@@ -3,7 +3,7 @@ import React, { useState, useDispatch, useNavigate } from 'react';
 import axios from "axios";
 
 
-
+//authorization almost done
 const Auth = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
