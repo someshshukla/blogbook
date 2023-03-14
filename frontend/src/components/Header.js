@@ -24,7 +24,7 @@ const Header = () => {
         <Box display = "flex" marginLeft="auto">
           { !isLoggedIn &&<Button LinkComponent={Link} to="/auth" sx={{ margin:1, borderRadius: 10 }} color="warning">Login</Button>}
           { !isLoggedIn &&<Button LinkComponent={Link} to="/auth" sx={{ margin:1, borderRadius: 10 }} color="warning">Signup</Button>}
-          { isLoggedIn && <Button onClick={()=>dispatch(authActions.logout)()</Box>} LinkComponent={Link} to="/auth" sx={{ margin:1, borderRadius: 10 }} color="warning">Logout</Button>}
+          { isLoggedIn && <Button onClick={()=>dispatch(authActions.logout)} LinkComponent={Link} to="/auth" sx={{ margin:1, borderRadius: 10 }} color="warning">Logout</Button>}
         </Box>
       </Toolbar>
     </AppBar>
