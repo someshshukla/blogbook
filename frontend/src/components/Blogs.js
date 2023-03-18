@@ -10,13 +10,14 @@ const Blogs = () => {
     return data;
   }
   useEffect(() => {
-    sendRequest().then(data=>console.log(data));
+    sendRequest().then((data) => setblogs(data.blogs));
+  }, []);
+  console.log(blogs);
 
-  }, [])
   
   return (
     <div>Blogs</div>
   )
 }
 
-export default Blogs
+export default Blogs;
