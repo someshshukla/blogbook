@@ -1,5 +1,6 @@
 import React, { useEffect} from 'react'
 import axios from "axios";
+import Blog from './Blog';
 
 
 const Blogs = () => {
@@ -16,7 +17,9 @@ const Blogs = () => {
 
   
   return (
-    <div>Blogs</div>
+    <div>
+      <Blog/>
+    </div>
   )
 }
 
