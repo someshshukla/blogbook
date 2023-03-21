@@ -3,7 +3,7 @@ import React  from 'react'
 
 const Blog = () => {
   return (
-    <div><Card sx={{ maxWidth: 345 }}>
+    <div><Card sx={{width:"40%", margin: "auto", mt: 2, padding: 2, boxShadow: " 10px 10px 20px #ccc" }}>
     <CardHeader
       avatar={
         <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
